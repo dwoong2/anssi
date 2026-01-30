@@ -29,7 +29,7 @@ const FAB = () => {
 
     return (
         <a
-            href="https://app.catchtable.co.kr/ct/shop/anssi_makgeolli"
+            href="https://www.catchtable.net/explore/shop/Y2F0Y2hfc1craGN3TWtJM1QzQ1BqQmRvMHdtdz09"
             target="_blank"
             rel="noopener noreferrer"
             className={`fab-container ${isVisible ? 'visible' : ''}`}
