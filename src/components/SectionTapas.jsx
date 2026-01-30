@@ -2,12 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { useLanguage, LANGUAGES } from '../hooks/useLanguage';
 import './SectionTapas.css';
 
-// Using the same vibe images as placeholders for food if specific food images aren't available yet
-// In a real scenario, we'd import specific food images
-import foodImg1 from '../assets/korean_artisanal_tapas_high_end_plating.png';
-import foodImg2 from '../assets/korean_food_2.png';
-import foodImg3 from '../assets/korean_food_3.png';
-import foodImg4 from '../assets/korean_food_4.png';
+// Imported user-provided cuisine images
+import cuisineImg1 from '../assets/cuisine/cuisine_01.png';
+import cuisineImg2 from '../assets/cuisine/cuisine_02.png';
+import cuisineImg3 from '../assets/cuisine/cuisine_03.png';
+import cuisineImg4 from '../assets/cuisine/cuisine_04.png';
+import cuisineImg5 from '../assets/cuisine/cuisine_05.png';
 import vibeImg2 from '../assets/vibe/vibe_02.png';
 
 const SectionTapas = () => {
@@ -15,10 +15,11 @@ const SectionTapas = () => {
 
     // Data for the feed
     const menuItems = [
-        { id: 1, img: foodImg1, nameEn: "Korean Artisan Tapas", ingredients: "Seasonal Ingredients", desc: "" },
-        { id: 2, img: foodImg2, nameEn: "Premium Makgeolli", ingredients: "Rice Wine", desc: "" },
-        { id: 3, img: foodImg3, nameEn: "Assorted Jeon", ingredients: "Korean Pancakes", desc: "" },
-        { id: 4, img: foodImg4, nameEn: "Bossam & Kimchi", ingredients: "Boiled Pork Belly", desc: "" }
+        { id: 1, img: cuisineImg1, nameEn: "Seasonal Delicacy", ingredients: "Chef's Special", desc: "" },
+        { id: 2, img: cuisineImg2, nameEn: "Signature Dish", ingredients: "Premium Ingredients", desc: "" },
+        { id: 3, img: cuisineImg3, nameEn: "Korean Artisan Tapas", ingredients: "Authentic Flavor", desc: "" },
+        { id: 4, img: cuisineImg4, nameEn: "Innovative Plate", ingredients: "Modern Touch", desc: "" },
+        { id: 5, img: cuisineImg5, nameEn: "Traditional Taste", ingredients: "Classic Recipe", desc: "" }
     ];
 
     const heading = {
