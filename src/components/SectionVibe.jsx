@@ -6,11 +6,13 @@ import vibeImg2 from '../assets/vibe/vibe_carousel_2.png';
 import vibeImg3 from '../assets/vibe/vibe_carousel_3.png';
 import vibeImg4 from '../assets/vibe/vibe_carousel_4.png';
 import vibeImg5 from '../assets/vibe/vibe_carousel_5.png';
+import vibeUser1 from '../assets/vibe/vibe_user_01.png';
+import vibeUser2 from '../assets/vibe/vibe_user_02.png';
 
 const SectionVibe = () => {
     const { language } = useLanguage();
 
-    const carouselImages = [vibeImg1, vibeImg2, vibeImg3, vibeImg4, vibeImg5];
+    const carouselImages = [vibeUser1, vibeUser2, vibeImg1, vibeImg2, vibeImg3, vibeImg4, vibeImg5];
 
     const content = {
         [LANGUAGES.EN]: {
