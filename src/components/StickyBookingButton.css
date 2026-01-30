@@ -49,3 +49,19 @@
 .sticky-booking-btn:active {
     transform: translateX(-50%) scale(0.98);
 }
+
+@media (max-width: 768px) {
+    .sticky-booking-btn {
+        width: auto;
+        max-width: 90%;
+        /* Prevent it from touching edges */
+        font-size: 1rem;
+        /* Smaller font for mobile */
+        padding: 14px 28px;
+        /* Adjusted padding */
+        bottom: 25px;
+        /* Slightly lower */
+        white-space: nowrap;
+        /* Keep it one line if possible, or allow wrap if needed. User wants "button look" so probably one line is better unless text is huge. With 1rem it should fit. */
+    }
+}

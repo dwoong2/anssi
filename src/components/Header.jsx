@@ -1,6 +1,8 @@
 import { useLanguage, LANGUAGES } from '../hooks/useLanguage';
 import './Header.css';
 
+import logo from '../assets/logo_white.png';
+
 const Header = () => {
     const { language, setLanguage } = useLanguage();
 
@@ -8,7 +10,7 @@ const Header = () => {
         <header className="global-header">
             <div className="header-content">
                 <div className="logo">
-                    <img src="/src/assets/logo_white.png" alt="Anssi Makgeolli" className="logo-img" />
+                    <img src={logo} alt="Anssi Makgeolli" className="logo-img" />
                 </div>
 
                 <nav className="lang-switcher">
