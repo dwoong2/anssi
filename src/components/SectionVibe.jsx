@@ -42,7 +42,8 @@ const SectionVibe = () => {
                 </div>
 
                 <div className="vibe-carousel">
-                    {carouselImages.map((img, index) => (
+                    {/* duplicate list for seamless loop */}
+                    {[...carouselImages, ...carouselImages].map((img, index) => (
                         <div key={index} className="vibe-carousel-item">
                             <img src={img} alt={`Vibe ${index + 1}`} className="vibe-carousel-image" />
                         </div>

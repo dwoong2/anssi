@@ -50,19 +50,98 @@
 /* Carousel Styles */
 .vibe-carousel {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    overflow: hidden;
+    /* Hide scrollbars */
+    width: 100%;
+    position: relative;
+}
+
+/* 
+   We apply the animation directly to the track (which is the container content here).
+   Since React renders the items directly inside .vibe-carousel, 
+   we might need an inner wrapper if we want to scroll the CONTENT.
+   
+   However, since we just duplicated items inside .vibe-carousel, 
+   we can treat .vibe-carousel as the window, 
+   and we need a 'track' effectively.
+   
+   Actually, the simplest way with current markup change is:
+   1. The .vibe-carousel acts as the window (overflow: hidden).
+   2. We need an inner wrapper to move. 
+   
+   Wait, I didn't add an inner wrapper in the JSX update above. 
+   I just mapped children directly into .vibe-carousel.
+   
+   If I want to slide them, I should probably animate the carousel content?
+   No, it's better to have a track.
+   
+   Let me fix the CSS to create the marquee effect on the items directly 
+   OR use a track. 
+   
+   Actually, easier to just animate the container utilizing a track 
+   implied by the flexbox? No, the container itself can't move if it's the window.
+   
+   Let's check the JSX again.
+   <div className="vibe-carousel">
+      {items...}
+   </div>
+   
+   So .vibe-carousel IS the flex container.
+   If I slide .vibe-carousel, it moves away from the page.
+   
+   I should have added a track wrapper in JSX. 
+   Let me quickly re-do the CSS to "simulate" a track or 
+   I will update JSX again to add a track wrapper.
+   
+   Actually, updating JSX is cleaner.
+   But I can also just make .vibe-carousel the track, 
+   and wrap it in .vibe-carousel-window in the JSX?
+   
+   Or... I can use `transform: translateX` on the items? No.
+   
+   Let's update JSX to have a track wrapper in the next turn if needed.
+   
+   BUT, I can rely on the existing structure if I just:
+   Make .vibe-carousel the Track.
+   And .vibe-container (parent) the Window?
+   .vibe-container is `width: 100%`.
+   
+   Yes! .vibe-container can be the window (overflow: hidden).
+   .vibe-carousel can be the moving track.
+*/
+
+.vibe-container {
+    overflow: hidden;
+    /* Masking */
+}
+
+.vibe-carousel {
+    display: flex;
     gap: 16px;
-    padding: 0 var(--spacing-md) 20px;
-    /* Bottom padding for scrollbar visual balance */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    /* Firefox */
+    padding: 0 0 20px;
+    /* Removed side padding to ensure smooth edge-to-edge */
+    width: max-content;
+    /* Force it to hold all items */
+    animation: scroll-left 40s linear infinite;
+}
+
+.vibe-carousel:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move by half (one full set) */
+    }
 }
 
 .vibe-carousel::-webkit-scrollbar {
     display: none;
-    /* Chrome/Safari */
 }
 
 .vibe-carousel-item {
