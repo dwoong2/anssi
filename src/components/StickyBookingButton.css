@@ -1,0 +1,51 @@
+.sticky-booking-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    /* Increased z-index */
+
+    /* 
+       Refined Premium Dark Gradient 
+       Angle: 170deg (Requested)
+       Brightest: #aa771c (Dark Gold)
+       Darkest: #2b1d08 (Deep Bronze/Black)
+       No sharp "center shine" to avoid "cheap" look.
+    */
+    background: linear-gradient(170deg, #aa771c 0%, #613e10 50%, #2b1d08 100%);
+
+    /* Text Color */
+    color: #ffffff !important;
+    /* Force White for contrast on dark background */
+
+    border: 1px solid rgba(170, 119, 28, 0.4);
+    padding: 18px 36px;
+    border-radius: 50px;
+
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.sticky-booking-btn:hover {
+    transform: translateX(-50%) translateY(-3px) scale(1.02);
+    /* Subtle shift on hover, keeping dark theme */
+    background: linear-gradient(170deg, #b88628 0%, #704b19 50%, #3d260b 100%);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    color: #ffffff !important;
+}
+
+.sticky-booking-btn:active {
+    transform: translateX(-50%) scale(0.98);
+}

@@ -1,0 +1,80 @@
+.liquor-section {
+    background: linear-gradient(to bottom, #050505, #151515);
+    min-height: 80vh;
+}
+
+.liquor-fog {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x;
+    background-size: contain;
+    animation: fog 60s linear infinite;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+@keyframes fog {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.liquor-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+.liquor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.liquor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.liquor-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.liquor-item:hover .liquor-circle {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.liquor-circle.red {
+    background: radial-gradient(#d32f2f, #b71c1c);
+}
+
+.liquor-circle.white {
+    background: radial-gradient(#fff, #e0e0e0);
+}
+
+.liquor-circle.house {
+    background: radial-gradient(#fdd835, #fbc02d);
+}
+
+.liquor-name {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}

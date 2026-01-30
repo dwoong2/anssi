@@ -1,0 +1,27 @@
+:root {
+  /* Colors */
+  --color-bg: #000000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-brand: #1a1a1a; /* Dark Ink */
+  --color-gold: #c5a059; /* Blue Ribbon / Michelin Gold-ish accent maybe? */
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-blur: 10px;
+
+  /* Typography */
+  --font-main: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif; /* For "sophisticated" feel */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Z-Index */
+  --z-header: 1000;
+  --z-fab: 900;
+  --z-overlay: 100;
+}

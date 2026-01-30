@@ -1,0 +1,102 @@
+.vibe-section {
+    position: relative;
+    background-color: #050505;
+    padding: 60px 0 80px;
+    /* Top padding for header, bottom for spacing */
+    overflow: hidden;
+    min-height: auto;
+    /* Allow flexible height based on content */
+    height: auto;
+}
+
+.vibe-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.vibe-header {
+    text-align: center;
+    padding: 0 var(--spacing-md);
+    opacity: 0;
+    animation: fadeInVibe 1.2s ease-out forwards;
+}
+
+.vibe-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+}
+
+.vibe-body {
+    font-family: var(--font-serif);
+    /* Switch to Serif for more impact if requested, or keep sans but bolder */
+    font-size: 1.4rem;
+    /* Significantly larger */
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    max-width: 800px;
+    /* Wider to allow text to fill space */
+    margin: 0 auto;
+    font-weight: 400;
+    /* Slightly thicker */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Better readability */
+}
+
+/* Carousel Styles */
+.vibe-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 0 var(--spacing-md) 20px;
+    /* Bottom padding for scrollbar visual balance */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.vibe-carousel::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.vibe-carousel-item {
+    flex: 0 0 auto;
+    width: 80vw;
+    max-width: 350px;
+    height: 450px;
+    /* Tall portrait aspect ratio */
+    scroll-snap-align: center;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.vibe-carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Optional: Slight zoom on hover for desktop feeling */
+.vibe-carousel-item:hover .vibe-carousel-image {
+    transform: scale(1.03);
+}
+
+@keyframes fadeInVibe {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

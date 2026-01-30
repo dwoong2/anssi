@@ -1,0 +1,42 @@
+.fab-container {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-fab);
+    text-decoration: none;
+    padding: var(--spacing-md);
+    /* Optional: Background gradient fade at bottom to make button pop */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+}
+
+.fab-button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 50px;
+    /* User requested Gold Gradient similar to Michelin badge */
+    background: linear-gradient(135deg, #a67c52 0%, #d4af37 50%, #a67c52 100%);
+    color: #000;
+    /* Black text for contrast on gold */
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.fab-button:hover {
+    background: linear-gradient(135deg, #b88a5c 0%, #e6be45 50%, #b88a5c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+    /* Gold glow */
+}
+
+.fab-button:active {
+    transform: scale(0.98);
+    background: #d4af37;
+}

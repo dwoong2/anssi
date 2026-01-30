@@ -1,0 +1,190 @@
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically center the text */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: var(--color-text-primary);
+}
+
+.badges-container {
+    position: absolute;
+    top: 100px;
+    /* Below header */
+    right: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.badge-img {
+    width: 50px;
+    /* Reduced to ~50% as requested (was 100px) */
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    /* Stronger shadow for better pop */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.hero-brand-name {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    /* Increased visibility as requested */
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+/* Optional decorative lines around brand name like reference */
+.hero-brand-name::before,
+.hero-brand-name::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    /* Slightly longer to match larger text */
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-brand-name::before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.hero-brand-name::after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+/* allow \n to work */
+
+.hero-main-title {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    /* Significantly increased size */
+    font-weight: 500;
+    line-height: 1.2;
+    width: 90%;
+    max-width: 500px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-highlight {
+    background: linear-gradient(170deg, #ffe680, #c5a059);
+    /* Bright yellow to Dark Gold */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Make text transparent to show gradient */
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9em;
+    font-weight: 700;
+    /* Bolder as requested */
+    letter-spacing: 0.02em;
+    padding-bottom: 2px;
+    /* Prevent gradient clipping */
+}
+
+/* Language specific adjustments */
+/* Language specific adjustments */
+.hero-section[data-language="CN"] .hero-main-title,
+.hero-section[data-language="JP"] .hero-main-title {
+    font-size: 3.2rem;
+    /* Even Larger font size for CJK as requested */
+    font-family: "Noto Serif SC", "Noto Serif JP", serif;
+    /* Explicit priority */
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 800px;
+    /* Allow more width for CJK to prevent wrapping */
+    width: 95%;
+    /* Use almost full width if needed */
+}
+
+.hero-section[data-language="CN"] .hero-highlight,
+.hero-section[data-language="JP"] .hero-highlight {
+    font-weight: 700;
+    line-height: 1.2;
+    word-break: keep-all;
+    /* Prevent character breaking for CJK */
+}
+
+/* Adjust sizes for small screens */
+/* Adjust sizes for small screens */
+@media (max-width: 450px) {
+    .hero-content {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+        width: 100%;
+    }
+
+    .hero-main-title {
+        font-size: 2.2rem;
+        width: 98%;
+        /* Allow full width interaction */
+        max-width: none;
+        /* remove 500px restriction */
+    }
+
+    .hero-section[data-language="CN"] .hero-main-title,
+    .hero-section[data-language="JP"] .hero-main-title {
+        font-size: 2.6rem;
+        width: 98%;
+        max-width: none;
+    }
+}

@@ -1,0 +1,16 @@
+.experience-section {
+    background-color: #111;
+    min-height: 70vh;
+    border-top: 1px solid #333;
+}
+
+.experience-quote {
+    margin-top: 40px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: #888;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 20px;
+}
